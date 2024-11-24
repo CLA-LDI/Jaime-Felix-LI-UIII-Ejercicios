@@ -1,4 +1,5 @@
 				TITLE	Programa para contar los elementos positivos de un arreglo usando procedimientos
+				PAGE	60, 132
 
 Include Macros.inc
 
