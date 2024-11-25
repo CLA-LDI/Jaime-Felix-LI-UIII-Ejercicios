@@ -52,12 +52,28 @@ Principal		PROC
 				MOV		R10, 0
 				CALL	WriteConsoleW
 
+				; Salto de línea
+				MOV		RCX, ManejadorS
+				LEA		RDX, SaltoLinea
+				MOV		R8, LENGTHOF SaltoLinea
+				LEA		R9, Caracteres
+				MOV		R10, 0
+				CALL	WriteConsoleW
+
 				; Ciclo para leer los 5 números de Arreglo1
 
 				; Mostrar nombre del Arreglo2
 				MOV		RCX, ManejadorS
 				LEA		RDX, StrArr02
 				MOV		R8, LENGTHOF StrArr02
+				LEA		R9, Caracteres
+				MOV		R10, 0
+				CALL	WriteConsoleW
+
+				; Salto de línea
+				MOV		RCX, ManejadorS
+				LEA		RDX, SaltoLinea
+				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
 				MOV		R10, 0
 				CALL	WriteConsoleW
@@ -82,6 +98,14 @@ Principal		PROC
 				MOV		R10, 0
 				CALL	WriteConsoleW
 
+				; Salto de línea
+				MOV		RCX, ManejadorS
+				LEA		RDX, SaltoLinea
+				MOV		R8, LENGTHOF SaltoLinea
+				LEA		R9, Caracteres
+				MOV		R10, 0
+				CALL	WriteConsoleW
+
 				; Mostrar el total de positivos de Arreglo1
 				; Mostrar salto de línea
 				; Mostrar el total de negativos de Arreglo1
@@ -102,6 +126,14 @@ Principal		PROC
 				MOV		RCX, ManejadorS
 				LEA		RDX, StrArr02
 				MOV		R8, LENGTHOF StrArr02
+				LEA		R9, Caracteres
+				MOV		R10, 0
+				CALL	WriteConsoleW
+
+				; Salto de línea
+				MOV		RCX, ManejadorS
+				LEA		RDX, SaltoLinea
+				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
 				MOV		R10, 0
 				CALL	WriteConsoleW
