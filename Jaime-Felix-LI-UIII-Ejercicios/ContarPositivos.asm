@@ -6,7 +6,6 @@ Include Macros.inc
 GetStdHandle	PROTO	:QWORD
 ReadConsoleW	PROTO	:QWORD,	:QWORD,	:QWORD,	:QWORD,	:QWORD
 WriteConsoleW	PROTO	:QWORD,	:QWORD,	:QWORD,	:QWORD,	:QWORD
-ExitProcess		PROTO	codigoSalida:QWORD
 
 				.DATA
 Arreglo1		QWORD	5 DUP ( ? )
@@ -34,12 +33,12 @@ Principal		PROC
 				; Alinear espacio en la pila
 				SUB		RSP, 40
 
-				; Obtener manejador estándar de teclado
+				; Obtener manejador estÃ¡ndar de teclado
 				MOV		RCX, STD_INPUT
 				CALL	GetStdHandle
 				MOV		ManejadorE, RAX
 
-				; Obtener manejador estándar de salida
+				; Obtener manejador estÃ¡ndar de salida
 				MOV		RCX, STD_OUTPUT
 				CALL	GetStdHandle
 				MOV		ManejadorS, RAX
@@ -49,42 +48,50 @@ Principal		PROC
 				LEA		RDX, StrArr01
 				MOV		R8, LENGTHOF StrArr01
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
-				; Salto de línea
+				; Salto de lÃ­nea
 				MOV		RCX, ManejadorS
 				LEA		RDX, SaltoLinea
 				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
-				; Ciclo para leer los 5 números de Arreglo1
+				; Ciclo para leer los 5 nÃºmeros de Arreglo1
 
 				; Mostrar nombre del Arreglo2
 				MOV		RCX, ManejadorS
 				LEA		RDX, StrArr02
 				MOV		R8, LENGTHOF StrArr02
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
-				; Salto de línea
+				; Salto de lÃ­nea
 				MOV		RCX, ManejadorS
 				LEA		RDX, SaltoLinea
 				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
-				; Ciclo para leer los 10 números de Arreglo2
+				; Ciclo para leer los 10 nÃºmeros de Arreglo2
 
 
-				; Llamar al método ContarPositivos
+				; Llamar al mÃ©todo ContarPositivos
 				; Pasando los datos de Arreglo1
-				; Poner en RCX la dirección de Arrreglo1
-				; Poner en RDX el número de elementos de Arreglo1
+				; Poner en RCX la direcciÃ³n de Arrreglo1
+				; Poner en RDX el nÃºmero de elementos de Arreglo1
 				; Llamar al procedimiento
 				; Guardar en la variable Positivos el valor de retorno del procedimiento
 				; Calcular el valor de la variable Negativos por diferencia entre el total de elementos - Positivos
@@ -95,28 +102,32 @@ Principal		PROC
 				LEA		RDX, StrArr01
 				MOV		R8, LENGTHOF StrArr01
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
-				; Salto de línea
+				; Salto de lÃ­nea
 				MOV		RCX, ManejadorS
 				LEA		RDX, SaltoLinea
 				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
 				; Mostrar el total de positivos de Arreglo1
-				; Mostrar salto de línea
+				; Mostrar salto de lÃ­nea
 				; Mostrar el total de negativos de Arreglo1
-				; Mostrar salto de línea
+				; Mostrar salto de lÃ­nea
 
 
 
-				; Llamar al método ContarPositivos
+				; Llamar al mÃ©todo ContarPositivos
 				; Pasando los datos de Arreglo2
-				; Poner en RCX la dirección de Arrreglo2
-				; Poner en RDX el número de elementos de Arreglo2
+				; Poner en RCX la direcciÃ³n de Arrreglo2
+				; Poner en RDX el nÃºmero de elementos de Arreglo2
 				; Llamar al procedimiento
 				; Guardar en la variable Positivos el valor de retorno del procedimiento
 				; Calcular el valor de la variable Negativos por diferencia entre el total de elementos - Positivos
@@ -127,32 +138,39 @@ Principal		PROC
 				LEA		RDX, StrArr02
 				MOV		R8, LENGTHOF StrArr02
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
-				; Salto de línea
+				; Salto de lÃ­nea
 				MOV		RCX, ManejadorS
 				LEA		RDX, SaltoLinea
 				MOV		R8, LENGTHOF SaltoLinea
 				LEA		R9, Caracteres
-				MOV		R10, 0
+				MOV		R10, 0						; Reservado para uso futuro
+				PUSH	R10
 				CALL	WriteConsoleW
+				POP		R10
 
 				; Mostrar el total de positivos de Arreglo2
-				; Mostrar salto de línea
+				; Mostrar salto de lÃ­nea
 				; Mostrar el total de negativos de Arreglo2
-				; Mostrar salto de línea
+				; Mostrar salto de lÃ­nea
 
-				; Terminar y regresar al sistema operativo
-				MOV		RCX, 0
-				CALL	ExitProcess
+				; Recuperar el espacio de la pila
+				ADD		RSP, 40
+
+				; Salir al S. O
+				MOV		RAX, 0					; CÃ³digo de salida 0
+				RET								; Retornar al sistema operativo
 Principal		ENDP
 
 ; Procedimiento ContarPositivos
-; Este procedimiento recibe como argumentos la dirección de inicio del
-; arreglo y el número de elementos del arreglo.
-; RCX = Dirección de inicio del arreglo
-; RDX = Número de elementos del arreglo
+; Este procedimiento recibe como argumentos la direcciÃ³n de inicio del
+; arreglo y el nÃºmero de elementos del arreglo.
+; RCX = DirecciÃ³n de inicio del arreglo
+; RDX = NÃºmero de elementos del arreglo
 ; Regresa el resultado en el registro RAX
 
 ContarPositivos	PROC
@@ -182,7 +200,7 @@ Ciclo:
 				
 				; Marco de pila. Restaurar el registro RBP
 
-				; Marco de pila. Sacar dirección de retorno y argumentos
+				; Marco de pila. Sacar direcciÃ³n de retorno y argumentos
 				RET
 ContarPositivos	ENDP
 				END
